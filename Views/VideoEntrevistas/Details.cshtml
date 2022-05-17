@@ -1,0 +1,42 @@
+﻿@model GestionarVE.VideoEntrevista
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VideoEntrevista</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.Descrption)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.Descrption)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SolicitudPersonal.Puesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SolicitudPersonal.Puesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VEntrevistaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

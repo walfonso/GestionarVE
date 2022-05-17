@@ -1,0 +1,58 @@
+﻿@model GestionarVE.Preseleccionado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Preseleccionado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SolicitudPersonal.Puesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SolicitudPersonal.Puesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codeKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codeKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codeSolPer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codeSolPer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fullname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fullname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPre }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

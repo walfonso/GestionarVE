@@ -1,0 +1,143 @@
+﻿@model GestionarVE.SolicitudPersonal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SolicitudPersonal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Hidden("@idSolPer", Model.SolPerID);
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.CIUO.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CIUO.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpresaID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpresaID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantPuesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantPuesto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SolPerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<h2>Listados de Preseleccionados</h2>
+
+<div>
+    <h4>Postulantes Preselecccionados</h4>
+    <hr />
+
+    <table class="table">
+        <tr>
+            <th>
+                Apellido y Nombre
+            </th>
+            <th>
+                Correo Electronico
+            </th>
+
+            <th>Opciones</th>
+        </tr>
+        @foreach (var item in Model.Preseleccionadoes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fullname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "../Preseleccionadoes/Edit", new { id = item.codeKey }) |
+                    @Html.ActionLink("Details", "../Preseleccionadoes/Details", new { id = item.codeKey }) |
+                    @Html.ActionLink("Delete", "../Preseleccionadoes/Delete", new { id = item.codeKey })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SolPerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<h2>Listados de Video Entrevistas</h2>
+
+<div>
+    <h4>Video Entrevistas</h4>
+    <p>
+        @Html.ActionLink("Nueva Entrevista", "../VideoEntrevistas/Create", new { idSolPer = Model.SolPerID }))
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Solicitud de Personal
+            </th>
+            <th>
+                Estado
+            </th>
+            <th>Opciones</th>
+        </tr>
+        @foreach (var item in Model.VideoEntrevistas)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SolicitudPersonal_SolPerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado_EstadoID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "../Preseleccionadoes/Edit", new { id = item.VEntrevistaID }) |
+            @Html.ActionLink("Details", "../Preseleccionadoes/Details", new { id = item.VEntrevistaID }) |
+            @Html.ActionLink("Delete", "../Preseleccionadoes/Delete", new { id = item.VEntrevistaID })
+        </td>
+    </tr>
+        }
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SolPerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

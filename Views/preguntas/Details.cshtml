@@ -1,0 +1,50 @@
+﻿@model GestionarVE.pregunta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>pregunta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VideoEntrevista.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoEntrevista.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VideoentrevistaID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoentrevistaID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderPregID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderPregID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.preguntaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

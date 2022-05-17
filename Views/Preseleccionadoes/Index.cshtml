@@ -1,0 +1,57 @@
+﻿@model IEnumerable<GestionarVE.Preseleccionado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SolicitudPersonal.Puesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codeKey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codeSolPer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fullname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SolicitudPersonal.Puesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codeKey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codeSolPer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fullname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idPre }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idPre }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idPre })
+        </td>
+    </tr>
+}
+
+</table>
