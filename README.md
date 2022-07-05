@@ -5,3 +5,4 @@ Una vez realizado el reclutamiento y la selección de los candidatos, el entrevi
 a)	Gestionar las Videos Entrevistas
 b)	Enviar la Video Entrevista a cada Candidato Elegido.
 c)	Permitir al Candidato contestar dicha Video Entrevista.
+d)  Seguimiento de Video Entrevistas
